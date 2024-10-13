@@ -1,12 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import MmvWidget from './components/MmvWidget';
+import { CarsInfoContextProvider } from './context/CarsInfoContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <CarsInfoContextProvider>
+        <View style={styles.container}>
+          <MmvWidget />
+      </View>
+    </CarsInfoContextProvider>
   );
 }
 
@@ -15,6 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 });
